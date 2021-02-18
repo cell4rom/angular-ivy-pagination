@@ -22,7 +22,6 @@ export class AppComponent  {
   
   constructor(private rsPaginationService : RsPaginationService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
 ) {
 }
 
