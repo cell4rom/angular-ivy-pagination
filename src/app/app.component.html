@@ -2,3 +2,57 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"> 
+        <div style="text-align:center">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">last_name</th>
+                <th scope="col">first_name</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody *ngFor='let elem of pageOfItems ; let i = index'>
+              <tr>
+                <th scope="row">{{i}}</th>
+                <td>{{elem.last_name}}</td>
+                <td>{{elem.first_name}}</td>
+                <td>{{elem.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <rs-pagination [items]="list" [currentSize]="size" (changePage)="onChangePage($event)"></rs-pagination>
+    </div>
+  
+    <div class="col-md-6"> 
+        <div style="text-align:center">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">last_name</th>
+                <th scope="col">first_name</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody *ngFor='let elem of list_api ; let i = index'>
+              <tr>
+                <th scope="row">{{i}}</th>
+                <td>{{elem.last_name}}</td>
+                <td>{{elem.first_name}}</td>
+                <td>{{elem.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <rs-pagination-api [pagesNumber]="pagesNumber" [page]="page" [currentSize]="size_api"></rs-pagination-api>
+    </div>
+  </div>
+  
